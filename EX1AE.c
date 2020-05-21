@@ -258,9 +258,10 @@ main()
 #include <math.h>
 main()
 {
-    double auxiliar, auxiliar2;
+    int cont=0;
+    double x, y;
     unsigned int var=0, c=0;
-    double cont;
+    //double cont;
     double n, n_original;
 
     do{
@@ -292,38 +293,38 @@ main()
 
     for(n_original=0, c=0; cont > 0; cont --)
     {
-        auxiliar2 = n;
-        auxiliar = n;
+        x = n;
+        y = n;
 
         for(c=0;c<cont;c++)
         {
-            auxiliar /= 10; printf("\tauxiliar1 = %lf\n",auxiliar);
+            x /= 10; printf("\tX / 10= %lf\n",x);
         }
 //auxiliar %= 1;  printf("\nAuxiliar % 1 = %lf\n",auxiliar);
-        if(floor(auxiliar) == ceil(auxiliar))
-            {auxiliar = floor(auxiliar) - 1;}
+        if(floor(x) == x + 1)
+            {x = floor(x) - 1;}
         else
-            auxiliar = floor(auxiliar);   printf("\nAuxiliar %% 1 = %lf\n",auxiliar);
+            x = floor(x);   printf("\nx %% 1 = %lf\n",x);
 
         for(c=0;c<cont;c++)
         {
-            auxiliar *= 10; printf("\tauxiliar2 = %.lf\n",auxiliar);
+            x *= 10; printf("\tx * 10= %.lf\n",x);
         }
 
-        auxiliar2 -= auxiliar;  printf("\nN - [(N/10)*10] = %.lf\n",auxiliar2);
+        y -= x;  printf("\nN - [(N/10)*10] = %.lf\ty = y - x\n",y);
 
         for(c=0;c+1<cont;c++)
         {
-            auxiliar2 /= 10;    printf("\n(N - (N/10)*10)/10 = %lf\n",auxiliar2);
+            y /= 10;    printf("\n(N - (N/10)*10)/10 = %lf\ty / 10\n",y);
         }
 
-        if(floor(auxiliar2) == ceil(auxiliar2))
-            {auxiliar2 = floor(auxiliar2) - 1;}
+        if(floor(y) == y + 1)
+            {y = floor(y) - 1;}
         else
-            auxiliar2 = floor(auxiliar2);   printf("\nAuxiliar %% 1 = %lf\n",auxiliar2);
+            y = floor(y);   printf("\ny %% 1 = %lf\n",y);
 
-        var += auxiliar2;
-        printf("\nRESPOSTA: %lf\n",n); printf("\nAuxiliar %% 1 = %lf\n",auxiliar);  printf("\nAUXILIAR2: %.lf\n",auxiliar2);  printf("\nVAR: %u\n",var);
+        var += y;
+        printf("\n n = %lf\n",n); /*printf("\nx %% 1 = %lf\n",x);*/  printf("\ny = %.lf\n",y);  printf("\nVAR: %u\n",var);
         /*(long int)((n -  (for(c=0;c!=cont;c++){(long)(n/10)}) * for(c=0;c!=cont;c++){(long)(n*10)}) / (for(c=0;c!=cont-1;c++){(long)(n/10)})));     //printf("\nCONT = %lf --- Numero: %lf",cont,(n -  (int)(n/cont) * cont) / (int)(cont/10));
         for(c=0;c<cont;c++)
             n_original = n/10;*/
