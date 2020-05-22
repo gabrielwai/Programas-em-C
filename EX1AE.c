@@ -260,7 +260,7 @@ main()
 {
     int cont=0;
     double x, y;
-    unsigned int var=0, c=0;
+    unsigned int acumulador=0, c=0;
     //double cont;
     double n, n_original;
 
@@ -298,39 +298,35 @@ main()
 
         for(c=0;c<cont;c++)
         {
-            x /= 10; printf("\tX / 10= %lf\n",x);
+            x /= 10; //printf("\tX / 10= %lf\n",x);
         }
-//auxiliar %= 1;  printf("\nAuxiliar % 1 = %lf\n",auxiliar);
+
         if(floor(x) == x + 1)
-            {x = floor(x) - 1;}
+            x = floor(x) - 1;
         else
-            x = floor(x);   printf("\nx %% 1 = %lf\n",x);
+            x = floor(x);   //printf("\n Divisao inteira de: (x // 1) = %lf\n",x);
 
         for(c=0;c<cont;c++)
         {
-            x *= 10; printf("\tx * 10= %.lf\n",x);
+            x *= 10;  //printf("\tx * 10= %.lf\n",x);
         }
 
-        y -= x;  printf("\nN - [(N/10)*10] = %.lf\ty = y - x\n",y);
+        y -= x;  //printf("\nN - [(N/10)*10] = %.lf\ty = y - x\n",y);
 
         for(c=0;c+1<cont;c++)
         {
-            y /= 10;    printf("\n(N - (N/10)*10)/10 = %lf\ty / 10\n",y);
+            y /= 10;    //printf("\n(N - (N/10)*10)/10 = %lf\ty / 10\n",y);
         }
 
         if(floor(y) == y + 1)
             {y = floor(y) - 1;}
         else
-            y = floor(y);   printf("\ny %% 1 = %lf\n",y);
+            y = floor(y);   //printf("\n Divisao inteira de: (y // 1) = %lf\n",y);
 
-        var += y;
-        printf("\n n = %lf\n",n); /*printf("\nx %% 1 = %lf\n",x);*/  printf("\ny = %.lf\n",y);  printf("\nVAR: %u\n",var);
-        /*(long int)((n -  (for(c=0;c!=cont;c++){(long)(n/10)}) * for(c=0;c!=cont;c++){(long)(n*10)}) / (for(c=0;c!=cont-1;c++){(long)(n/10)})));     //printf("\nCONT = %lf --- Numero: %lf",cont,(n -  (int)(n/cont) * cont) / (int)(cont/10));
-        for(c=0;c<cont;c++)
-            n_original = n/10;*/
+        acumulador += y;
     }
 
-    printf("\nSoma dos algarismos de %.lf = %.lf\n",n,n_original);
+    printf("\nSoma dos algarismos de %.lf = %u\n",n,acumulador);
 }
 
 #endif // ex04
