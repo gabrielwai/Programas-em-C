@@ -261,7 +261,6 @@ main()
     int cont=0;
     double x, y;
     unsigned int acumulador=0, c=0;
-    //double cont;
     double n, n_original;
 
     do{
@@ -290,10 +289,10 @@ main()
         cont += 1;
     }
     cont+=1;
-
-    for(n_original=0, c=0; cont > 0; cont --)
-    {
-        x = n;
+// "n_original" passa a ser a partir de agora o acumulador dos algarismos que devem ser somados.
+    for(n_original=0, c=0; cont > 0; cont --) //aplicação da fórmula: (n-[divisão_inteira_de(n/10^cont)*10^cont])/10^cont-1
+    {                                         //repetidas vezes, diminuindo o valor de "cont" a cada repetição. A quantidade de
+        x = n;                                //repetições é igual ao Nº de algarismos do fatorial do N° digitado.
         y = n;
 
         for(c=0;c<cont;c++)
@@ -323,10 +322,10 @@ main()
         else
             y = floor(y);   //printf("\n Divisao inteira de: (y // 1) = %lf\n",y);
 
-        acumulador += y;
+        n_original += y;
     }
 
-    printf("\nSoma dos algarismos de %.lf = %u\n",n,acumulador);
+    printf("\nSoma dos algarismos de %.lf = %.lf\n",n, n_original);
 }
 
 #endif // ex04
