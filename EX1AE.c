@@ -258,9 +258,9 @@ main()
 #include <math.h>
 main()
 {
-    int cont=0;
+    int cont=0, c=0;
     double x, y;
-    unsigned int acumulador=0, c=0;
+    //unsigned int acumulador=0, c=0;
     double n, n_original;
 
     do{
@@ -297,30 +297,30 @@ main()
 
         for(c=0;c<cont;c++)
         {
-            x /= 10; //printf("\tX / 10= %lf\n",x);
+            x /= 10; printf("\tX / 10= %lf\n",x);
         }
 
         if(floor(x) == x + 1)
             x = floor(x) - 1;
         else
-            x = floor(x);   //printf("\n Divisao inteira de: (x // 1) = %lf\n",x);
+            x = floor(x);   printf("\n Divisao inteira de: (x // 1) = %lf\n",x);
 
         for(c=0;c<cont;c++)
         {
-            x *= 10;  //printf("\tx * 10= %.lf\n",x);
+            x *= 10;  printf("\tx * 10= %.lf\n",x);
         }
 
-        y -= x;  //printf("\nN - [(N/10)*10] = %.lf\ty = y - x\n",y);
+        y -= x;  printf("\nN - [(N/10)*10] = %.lf\ty = y - x\n",y);
 
         for(c=0;c+1<cont;c++)
         {
-            y /= 10;    //printf("\n(N - (N/10)*10)/10 = %lf\ty / 10\n",y);
+            y /= 10;    printf("\n(N - (N/10)*10)/10 = %lf\ty / 10\n",y);
         }
 
         if(floor(y) == y + 1)
             {y = floor(y) - 1;}
         else
-            y = floor(y);   //printf("\n Divisao inteira de: (y // 1) = %lf\n",y);
+            y = floor(y);   printf("\n Divisao inteira de: (y // 1) = %lf\n",y);
 
         n_original += y;
     }
